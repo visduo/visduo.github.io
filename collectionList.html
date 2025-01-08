@@ -26,7 +26,7 @@
                 <el-col :span="24" :sm="18" :md="12" :lg="10">
                     <el-image src="assets/微信公众号二维码.png" style=" margin-bottom: 1.5rem;"></el-image>
                     <h2 style="text-align: center;">微信公众号文章合集列表</h2>
-                    <el-form>
+                    <el-form @submit.native.prevent>
                         <el-form-item>
                             <el-input v-model="searchTitle" placeholder="请输入关键字搜索" />
                         </el-form-item>

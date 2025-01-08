@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>微信公众号文章合集列表</title>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        a {
+            width: 100%;
+        }
+        a span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
@@ -18,7 +29,7 @@
                     <el-table :data="collectionlist" border :show-header="false" style="width: 100%;">
                         <el-table-column prop="title">
                             <template slot-scope="scope">
-                                <el-link :href="scope.row.url" target="_blank">{{ scope.row.title }}</el-link>
+                                <el-link :href="scope.row.url" :underline="false" target="_blank">{{ scope.row.title }}</el-link>
                             </template>
                         </el-table-column>
                     </el-table>

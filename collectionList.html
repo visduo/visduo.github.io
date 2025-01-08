@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微信公众号文章合集列表</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-main>
+            <el-row type="flex" justify="center">
+                <el-col :span="24" :sm="18" :md="12" :lg="10">
+                    <el-image src="assets/微信公众号二维码.png" style=" margin-bottom: 1.5rem;"></el-image>
+                    <h2 style="text-align: center;">微信公众号文章合集列表</h2>
+                    <el-table :data="collectionlist" border :show-header="false" style="width: 100%;">
+                        <el-table-column prop="title">
+                            <template slot-scope="scope">
+                                <el-link :href="scope.row.url" target="_blank">{{ scope.row.title }}</el-link>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </el-col>
+            </el-row>
+        </el-main>
+    </el-container>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            collectionlist: [
+                {
+                    title: "折腾笔记",
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3784693351820148742#wechat_redirect"
+                },
+                {
+                    title: "Java 框架基础技术",
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3788472291596550148#wechat_redirect"
+                },
+                {
+                    title: "SSM 企业轻量级开发框架",
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3781901702484312070#wechat_redirect"
+                },
+                {
+                    title: "短视频创作实战之抖音 + 剪映 + Premiere",
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3784011509202796552#wechat_redirect"
+                },
+                {
+                    title: "Stable Diffusion AIGC 视觉设计实战教程",
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3802173526744875013#wechat_redirect"
+                }
+            ]
+        }
+    })
+</script>
+</body>
+</html>

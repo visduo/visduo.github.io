@@ -26,7 +26,13 @@
                 <el-col :span="24" :sm="18" :md="12" :lg="10">
                     <el-image src="assets/微信公众号二维码.png" style=" margin-bottom: 1.5rem;"></el-image>
                     <h2 style="text-align: center;">微信公众号文章合集列表</h2>
-                    <el-table :data="collectionlist" border :show-header="false" style="width: 100%;">
+                    <el-form>
+                        <el-form-item>
+                            <el-input v-model="searchTitle" placeholder="请输入关键字搜索" />
+                        </el-form-item>
+                    </el-form>
+                    <el-table :data="collectionList.filter(data => !searchTitle || data.title.includes(searchTitle))"
+                              border :show-header="false" style="width: 100%;">
                         <el-table-column prop="title">
                             <template slot-scope="scope">
                                 <el-link :href="scope.row.url" :underline="false" target="_blank">{{ scope.row.title }}</el-link>
@@ -45,7 +51,8 @@
     let vm = new Vue({
         el: '#app',
         data: {
-            collectionlist: [
+            searchTitle: '',
+            collectionList: [
                 {
                     title: "折腾笔记",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3784693351820148742#wechat_redirect"
@@ -65,6 +72,46 @@
                 {
                     title: "Stable Diffusion AIGC 视觉设计实战教程",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3802173526744875013#wechat_redirect"
+                },
+                {
+                    title: "HarmonyOS 应用开发快速入门",
+                    url: ""
+                },
+                {
+                    title: "响应式布局与 Bootstrap 框架",
+                    url: ""
+                },
+                {
+                    title: "Spring Boot 框架核心技术",
+                    url: ""
+                },
+                {
+                    title: "Vue.js 前端开发实战",
+                    url: ""
+                },
+                {
+                    title: "Vue.js 前端开发核心串讲",
+                    url: ""
+                },
+                {
+                    title: "微信小程序开发实战（第 2 版）",
+                    url: ""
+                },
+                {
+                    title: "PHP 基础案例教程（第 2 版）",
+                    url: ""
+                },
+                {
+                    title: "前端三剑客 HTML+CSS+JavaScript 核心串讲",
+                    url: ""
+                },
+                {
+                    title: "Solon 全场景应用开发框架快速上手",
+                    url: ""
+                },
+                {
+                    title: "鸿蒙原生应用开发 ArkTS 语言快速上手",
+                    url: ""
                 }
             ]
         }

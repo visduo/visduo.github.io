@@ -42,6 +42,7 @@
                             <template slot-scope="scope">
                                 <el-tag size="small" v-if="scope.row.status == '更新中'">更新中</el-tag>
                                 <el-tag size="small" type="success" v-if="scope.row.status == '已完结'">已完结</el-tag>
+                                <el-tag size="small" type="info" v-if="scope.row.status == '准备中'">准备中</el-tag>
                                 <el-link :href="scope.row.url" :underline="false" target="_blank" style="display: inline; margin-left: 0.5rem;">
                                     {{ scope.row.title }}
                                 </el-link>
@@ -92,48 +93,58 @@
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3805245979280916488#wechat_redirect"
                 },
                 {
-                    title: "响应式布局与 Bootstrap 框架",
+                    title: "微信小程序开发实战（第 2 版）",
                     status: "更新中",
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3814477944308318211#wechat_redirect"
+                },
+                {
+                    title: "响应式布局与 Bootstrap 框架",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Spring Boot 框架核心技术",
-                    status: "更新中",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Vue.js 前端开发实战",
-                    status: "更新中",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Vue.js 前端开发核心串讲",
-                    status: "更新中",
-                    url: ""
-                },
-                {
-                    title: "微信小程序开发实战（第 2 版）",
-                    status: "更新中",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "PHP 基础案例教程（第 2 版）",
-                    status: "更新中",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "前端三剑客 HTML+CSS+JavaScript 核心串讲",
-                    status: "更新中",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Solon 全场景应用开发框架快速上手",
-                    status: "更新中",
+                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "鸿蒙原生应用开发 ArkTS 语言快速上手",
-                    status: "更新中",
+                    status: "准备中",
+                    url: ""
+                },
+                {
+                    title: "习近平新时代中国特色社会主义思想概论",
+                    status: "准备中",
+                    url: ""
+                },
+                {
+                    title: "毛泽东思想和中国特色社会主义理论体系概论",
+                    status: "准备中",
                     url: ""
                 }
             ]

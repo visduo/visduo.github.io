@@ -40,9 +40,6 @@
                               border :show-header="false" style="width: 100%;">
                         <el-table-column prop="title">
                             <template slot-scope="scope">
-                                <el-tag size="small" v-if="scope.row.status == '更新中'">更新中</el-tag>
-                                <el-tag size="small" type="success" v-if="scope.row.status == '已完结'">已完结</el-tag>
-                                <el-tag size="small" type="info" v-if="scope.row.status == '准备中'">准备中</el-tag>
                                 <el-link :href="scope.row.url" :underline="false" target="_blank" style="display: inline; margin-left: 0.5rem;">
                                     {{ scope.row.title }}
                                 </el-link>
@@ -64,89 +61,77 @@
             collectionList: [
                 {
                     title: "折腾笔记",
-                    status: "更新中",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3784693351820148742#wechat_redirect"
                 },
                 {
                     title: "Java 框架基础技术",
-                    status: "已完结",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3788472291596550148#wechat_redirect"
                 },
                 {
                     title: "SSM 企业轻量级开发框架",
-                    status: "更新中",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3781901702484312070#wechat_redirect"
                 },
                 {
                     title: "短视频创作实战之抖音 + 剪映 + Premiere",
-                    status: "更新中",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3784011509202796552#wechat_redirect"
                 },
                 {
                     title: "Stable Diffusion AIGC 视觉设计实战教程",
-                    status: "更新中",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3802173526744875013#wechat_redirect"
                 },
                 {
                     title: "AI 提示词实战训练营",
-                    status: "更新中",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3873967364274126855#wechat_redirect"
                 },
                 {
                     title: "HarmonyOS 应用开发快速入门",
-                    status: "已完结",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3805245979280916488#wechat_redirect"
                 },
                 {
                     title: "微信小程序开发实战（第 2 版）",
-                    status: "更新中",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3814477944308318211#wechat_redirect"
                 },
+                    /**
                 {
                     title: "短视频拍摄、剪辑、调色与特效制作",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "响应式布局与 Bootstrap 框架",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Spring Boot 框架核心技术",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Vue.js 前端开发实战",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Vue.js 前端开发核心串讲",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "PHP 基础案例教程（第 2 版）",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "前端三剑客 HTML+CSS+JavaScript 核心串讲",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "Solon 全场景应用开发框架快速上手",
-                    status: "准备中",
                     url: ""
                 },
                 {
                     title: "鸿蒙原生应用开发 ArkTS 语言快速上手",
-                    status: "准备中",
                     url: ""
                 },
+                {
+                    title: "短视频拍摄、剪辑、调色与特效制作",
+                    url: ""
+                },**/
             ]
         }
     })

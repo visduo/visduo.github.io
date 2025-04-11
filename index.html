@@ -21,6 +21,15 @@
             white-space: nowrap;
             width: 100%;
         }
+        p {
+            line-height: 2;
+        }
+        .el-tab-pane p:first-child {
+            margin-top: 0;
+        }
+        .el-tab-pane p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -29,25 +38,55 @@
         <el-main>
             <el-row type="flex" justify="center">
                 <el-col :span="24" :sm="18" :md="12" :lg="10">
-                    <el-image src="assets/微信公众号-搜索联合传播样式-标准色版.png" style="width: 100%; margin-bottom: 1.5rem;"></el-image>
-                    <el-form @submit.native.prevent>
-                        <el-form-item>
-                            <el-input v-model="searchTitle" placeholder="请输入关键字搜索" />
-                        </el-form-item>
-                    </el-form>
-                    <el-table :data="collectionList.filter(data => !searchTitle || data.title.includes(searchTitle))"
-                              border :show-header="false" style="width: 100%;">
-                        <el-table-column prop="title">
-                            <template slot-scope="scope">
-                                <el-link :href="scope.row.url" :underline="false" target="_blank" style="display: inline; margin-left: 0.5rem;">
-                                    <i class="el-icon-document-copy"></i> {{ scope.row.title }}
-                                </el-link>
-                            </template>
-                        </el-table-column>
-                    </el-table>
+                    <el-image src="assets/微信公众号-搜索联合传播样式-标准色版.png" style="width: 100%; margin-bottom: 1rem;"></el-image>
+                    <el-tabs type="border-card">
+                        <el-tab-pane label="文章合集">
+                            <el-form @submit.native.prevent>
+                                <el-form-item>
+                                    <el-input v-model="searchTitle" placeholder="请输入关键字搜索" />
+                                </el-form-item>
+                            </el-form>
+                            <el-table :data="collectionList.filter(data => !searchTitle || data.title.includes(searchTitle))"
+                                      border :show-header="false" style="width: 100%;">
+                                <el-table-column prop="title">
+                                    <template slot-scope="scope">
+                                        <el-link :href="scope.row.url" :underline="false" target="_blank" style="display: inline; margin-left: 0.5rem;">
+                                            <i class="el-icon-document-copy"></i> {{ scope.row.title }}
+                                        </el-link>
+                                    </template>
+                                </el-table-column>
+                            </el-table>
+                        </el-tab-pane>
+                        <el-tab-pane label="关于我">
+                            <p>@多仔ヾ - 全干工程师、社区开发者、教育工作者。</p>
+                            <p>故乡福建泉州，现居福建厦门，是一枚热衷折腾互联网，热衷捣鼓各种东西，正在努力的晚生‍。</p>
+                            <p>行动派，说做就做。向往自由自在，无奈生活多樊笼。</p>
+                            <p>自勉：用最初的心，走最远的路。</p>
+                        </el-tab-pane>
+                        <el-tab-pane label="联系我">
+                            <p>QQ：511553299（请带备注）</p>
+                            <p>微信：visduo（请带备注）</p>
+                            <p>邮箱：linjinhuang@fjisp.com</p>
+                            <p style="margin-top: 2rem;">世界之大，期待与你交友。</p>
+                        </el-tab-pane>
+                        <el-tab-pane label="声明">
+                            <p style="margin-bottom: 2rem;">微信公众号「多仔」是我的学术文档库，主要更新日常折腾笔记和日常教学笔记，一般情况下一个合集的文章会对应一门课程/一本教材/一个项目/一项专题，努力打造一片学习的净土。</p>
+
+                            <p style="margin-bottom: 2rem;">如无特殊说明，文档库中的系列文档均为作者「@多仔」原创编辑，版权归作者所有，资源引用部分已注明来源，拒绝未经授权的任何个人或组织以任何形式转载、复制、修改、发布或用于商业目的。</p>
+
+                            <p style="margin-bottom: 2rem;">系列文档中，可能会存在些许错误、错别字，或资料不完善、描述不完整、内容不完整、排版布局异常、格式异常等问题，系列文档中，相关代码片段、例图、文本等内容仅供参考。</p>
+
+                            <p>如需反馈或交流，请联系我，谢谢 :)</p>
+                        </el-tab-pane>
+                    </el-tabs>
                 </el-col>
             </el-row>
         </el-main>
+        <el-footer style="margin-top: 2rem;">
+            <div style="text-align: center; color: #909399; font-size: 13px;">
+                © 多仔
+            </div>
+        </el-footer>
     </el-container>
 </div>
 <script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
@@ -98,15 +137,11 @@
                     title: "短视频拍摄、剪辑与特效制作",
                     url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3894201513450668034#wechat_redirect"
                 },
-                    /**
-                {
-                    title: "短视频拍摄、剪辑、调色与特效制作",
-                    url: ""
-                },
                 {
                     title: "响应式布局与 Bootstrap 框架",
-                    url: ""
+                    url: "https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0NjI2MDg3OQ==&action=getalbum&album_id=3938433123754442765#wechat_redirect"
                 },
+                    /**
                 {
                     title: "Spring Boot 框架核心技术",
                     url: ""
